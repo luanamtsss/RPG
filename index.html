@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aventura de Batalha e Puzzles</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+
+    #game-container {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    #message {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    #choices {
+      margin-top: 20px;
+    }
+
+    .choice-btn {
+      padding: 10px 20px;
+      margin: 5px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #reset-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #ff5733;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="game-container">
+    <h1>Aventura de Batalha e Puzzles</h1>
+    <button onclick="iniciar()">Iniciar a aventura!</button>
+  </div>
+
+  <script src="rpg.js"></script>
+</body>
+</html>
