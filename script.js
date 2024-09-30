@@ -154,7 +154,31 @@ function iniciarJornadaBruxa() {
        alert("Você chegou ao topo e avistou o dragão!");
        return;
    }
+} else {
+    alert(`Você decidiu seguir o caminho até o topo da montanha.`);
+   
+            alert("Você chegou ao topo e avistou o dragão!");
+    // Adicione lógica adicional para o que acontece ao encontrar o dragão
+    const enfrentarDragao = confirm("O dragão está à sua frente. Você deseja enfrentá-lo?");
+    const opcao2 = prompt(`O dragão está à sua frente. Você deseja enfrentá-lo?
+    1 - sim
+    2 - não`);
+    
+    if (enfrentarDragao) {
+        // Aqui você pode adicionar uma batalha com o dragão, se desejar
+        alert("Você se preparou para a batalha contra o dragão!");
+        const resultadoBatalha = rolarDado();
+        if (resultadoBatalha > 10) {
+            alert("Você venceu o dragão e salvou o reino!");
+        } else {
+            alert("O dragão foi muito forte! Você não conseguiu vencer.");
+        }
+    } else {
+        alert("Você decidiu não enfrentar o dragão e voltou.");
+    }
+    return;
 }
+
 // Função para iniciar a jornada do cavaleiro
 function iniciarJornadaCavaleiro() {
    const opcao1 = prompt(`Você está em frente a uma montanha sombria. O que você faz?
@@ -184,6 +208,10 @@ function iniciarJornadaCavaleiro() {
                alert("Você chegou ao topo e avistou o dragão!");
        // Adicione lógica adicional para o que acontece ao encontrar o dragão
        const enfrentarDragao = confirm("O dragão está à sua frente. Você deseja enfrentá-lo?");
+       const opcao2 = prompt(`O dragão está à sua frente. Você deseja enfrentá-lo?
+       1 - sim
+       2 - não`);
+       
        if (enfrentarDragao) {
            // Aqui você pode adicionar uma batalha com o dragão, se desejar
            alert("Você se preparou para a batalha contra o dragão!");
