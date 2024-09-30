@@ -5,9 +5,15 @@ let personagemPrincipal = "";
 let sorteioDado = 0;
 // variável que irá guardar a consequência de cada número sorteado no desafio da montanha
 const consequenciasMontanha = [
-   'Você encontrou um dragão feroz! Prepare-se para a batalha!',
+   'Você encontrou um monstro feroz! Prepare-se para a batalha!',
    'Você encontrou um grupo de criaturas místicas e deve enfrentá-las.',
    'Você passou pela montanha sem nenhum problema!'
+];
+
+const consequenciascasa = [
+    'A casa tem um elfo raivoso .',
+    'A casa é  um labirinto e você não consegue mais sair',
+    'não havia nada na casa, so teve perca de tempo.'
 ];
 //************************************* Funções que serão repetidas ao longo do jogo *************************************
 // Função para rolar um dado (1 a 20)
@@ -62,7 +68,7 @@ function batalhaMedia() {
    if (vidaPersonagem <= 0) {
        alert("Você perdeu! O jogo acabou.");
    } else {
-       alert("Você venceu! Agora a história continua....");
+       alert("Você venceu!");
    }
 }
 //************************************* Função que roda ao iniciar o jogo *************************************
@@ -97,133 +103,211 @@ function sortearPersonagem() {
 //************************************* Funções para jornada de cada personagem *************************************
 // Função para iniciar a jornada da princesa
 function iniciarJornadaPrincesa() {
-   const opcao1 = prompt(`Você está em frente a uma montanha sombria, que tem uma carverna assustadora. O que você faz?
-       1 - Entro na montanha para explorar
-       2 - Sigo o caminho até o topo da montanha`);
-   if (opcao1 == "1") {
-       const rolarDados = confirm("Agora vamos tentar sua sorte! Preparado para rolar os dados?");
-       if (rolarDados === true) {
-           sorteioDado = rolarDado();
-           alert(`O número sorteado foi ${sorteioDado}!`);
-           if (sorteioDado >= 0 && sorteioDado <= 7) {
-               alert(`${consequenciasMontanha[0]}`);
-               batalhaMedia();
-           } else if (sorteioDado >= 8 && sorteioDado <= 14) {
-               alert(`${consequenciasMontanha[1]}`);
-               batalhaFacil();
-           } else {
-               alert(`${consequenciasMontanha[2]}`);
-           }
-       } else {
-           alert(`Se ainda não está preparado, volte mais tarde.`);
-           return;
-       }
-   } else {
-       alert(`Você decidiu seguir o caminho até o topo da montanha.`);
-       // Adicione mais lógica para a jornada até o topo aqui, se desejar.
-       alert("Você chegou ao topo e avistou o dragão!");
-       return;
-   }
-}
-// Função para iniciar a jornada da bruxa
-function iniciarJornadaBruxa() {
-   const opcao1 = prompt(`Você está em frente a uma montanha sombria. O que você faz?
-       1 - Entro na montanha para explorar
-       2 - Sigo o caminho até o topo da montanha`);
-   if (opcao1 == "1") {
-       const rolarDados = confirm("Agora vamos ver a sua sorte! Preparado para rolar os dados?");
-       if (rolarDados === true) {
-           sorteioDado = rolarDado();
-           alert(`O número sorteado foi ${sorteioDado}!`);
-           if (sorteioDado >= 0 && sorteioDado <= 7) {
-               alert(`${consequenciasMontanha[0]}`);
-               batalhaMedia();
-           } else if (sorteioDado >= 8 && sorteioDado <= 14) {
-               alert(`${consequenciasMontanha[1]}`);
-               batalhaFacil();
-           } else {
-               alert(`${consequenciasMontanha[2]}`);
-           }
-       } else {
-           alert(`Se ainda não está preparado, volte mais tarde.`);
-           return;
-       }
-   } else {
-       alert(`Você decidiu seguir o caminho até o topo da montanha.`);
-       // Adicione mais lógica para a jornada até o topo aqui, se desejar.
-       alert("Você chegou ao topo e avistou o dragão!");
-       return;
-   }
-} else {
-    alert(`Você decidiu seguir o caminho até o topo da montanha.`);
-   
-            alert("Você chegou ao topo e avistou o dragão!");
-    // Adicione lógica adicional para o que acontece ao encontrar o dragão
-    const enfrentarDragao = confirm("O dragão está à sua frente. Você deseja enfrentá-lo?");
-    const opcao2 = prompt(`O dragão está à sua frente. Você deseja enfrentá-lo?
-    1 - sim
-    2 - não`);
-    
-    if (enfrentarDragao) {
-        // Aqui você pode adicionar uma batalha com o dragão, se desejar
-        alert("Você se preparou para a batalha contra o dragão!");
-        const resultadoBatalha = rolarDado();
-        if (resultadoBatalha > 10) {
-            alert("Você venceu o dragão e salvou o reino!");
+    const opcao1 = prompt(`Você está em frente a uma montanha sombria, que tem uma caverna assustadora do lado. O que você faz?
+        1 - Entro na caverna para explorar
+        2 - Sigo o caminho até o topo da montanha`);
+    if (opcao1 == "1") {
+        const rolarDados = confirm("Agora vamos tentar sua sorte! Preparado para rolar os dados?");
+        if (rolarDados === true) {
+            sorteioDado = rolarDado();
+            alert(`O número sorteado foi ${sorteioDado}!`);
+            if (sorteioDado >= 0 && sorteioDado <= 7) {
+                alert(`${consequenciasMontanha[0]}`);
+                batalhaMedia();
+            } else if (sorteioDado >= 8 && sorteioDado <= 14) {
+                alert(`${consequenciasMontanha[1]}`);
+                batalhaFacil();
+            } else {
+                alert(`${consequenciasMontanha[2]}`);
+            }
         } else {
-            alert("O dragão foi muito forte! Você não conseguiu vencer.");
+            alert(`Se ainda não está preparado, volte mais tarde.`);
+            return;
         }
     } else {
-        alert("Você decidiu não enfrentar o dragão e voltou.");
-    }
-    return;
-}
+        alert(`Você decidiu seguir o caminho até o topo da montanha.`);
 
+        const opcao2 = prompt(`ao subir mais um pouco, você se deparou com uma casa abandonada. O que você faz ?
+        1 - entro na casa
+        2 - continuo o caminho`);
+    if (opcao2 == 1){
+        const rolarDados = confirm("Agora vamos tentar sua sorte! Preparado para rolar os dados?"); 
+        if (rolarDados === true){
+            sorteioDado = rolarDado();
+            alert(`O número sorteado foi ${sorteioDado}!`);
+            if (sorteioDado >= 0 && sorteioDado <= 7) {
+                alert(`${consequenciascasa[0]}`);
+                batalhaFacil();
+            } else if (sorteioDado >= 8 && sorteioDado <= 14) {
+                alert(`você morreu`);
+
+            } else {
+                alert(`${consequenciascasa[2]}`);
+            }    
+        }else{
+            alert('se ainda nn está preparad, volte.');
+            return;
+        }
+    }  else{
+        alert('você decidu seguir o caminho.');
+    } 
+                alert("Você chegou ao topo e avistou o dragão!");
+        
+        const opcao3 = prompt(`O dragão está à sua frente. Você deseja enfrentá-lo?
+        1 - sim
+        2 - não`);
+        
+        if (opcao3 == 1) {
+            const rolarDados = confirm("Agora vamos tentar sua sorte! Preparado para rolar os dados?");
+            resultadoBatalha = rolarDado();
+            if (resultadoBatalha > 10) {
+                alert("Você venceu o dragão e salvou o reino!");
+            } else {
+                alert("O dragão foi muito forte! Você não conseguiu vencer.");
+            }
+        } else {
+            alert("Você decidiu não enfrentar o dragão e voltou.");
+        }
+        return;
+    }
+ }
+// Função para iniciar a jornada da bruxa
+function iniciarJornadaBruxa() {
+    const opcao1 = prompt(`Você está em frente a uma montanha sombria, que tem uma caverna assustadora do lado. O que você faz?
+        1 - Entro na caverna para explorar
+        2 - Sigo o caminho até o topo da montanha`);
+    if (opcao1 == "1") {
+        const rolarDados = confirm("Agora vamos tentar sua sorte! Preparado para rolar os dados?");
+        if (rolarDados === true) {
+            sorteioDado = rolarDado();
+            alert(`O número sorteado foi ${sorteioDado}!`);
+            if (sorteioDado >= 0 && sorteioDado <= 7) {
+                alert(`${consequenciasMontanha[0]}`);
+                batalhaMedia();
+            } else if (sorteioDado >= 8 && sorteioDado <= 14) {
+                alert(`${consequenciasMontanha[1]}`);
+                batalhaFacil();
+            } else {
+                alert(`${consequenciasMontanha[2]}`);
+            }
+        } else {
+            alert(`Se ainda não está preparado, volte mais tarde.`);
+            return;
+        }
+    } else {
+        alert(`Você decidiu seguir o caminho até o topo da montanha.`);
+
+        const opcao2 = prompt(`ao subir mais um pouco, você se deparou com uma casa abandonada. O que você faz ?
+        1 - entro na casa
+        2 - continuo o caminho`);
+    if (opcao2 == 1){
+        const rolarDados = confirm("Agora vamos tentar sua sorte! Preparado para rolar os dados?"); 
+        if (rolarDados === true){
+            sorteioDado = rolarDado();
+            alert(`O número sorteado foi ${sorteioDado}!`);
+            if (sorteioDado >= 0 && sorteioDado <= 7) {
+                alert(`${consequenciascasa[0]}`);
+                batalhaFacil();
+            } else if (sorteioDado >= 8 && sorteioDado <= 14) {
+                alert(`você morreu`);
+
+            } else {
+                alert(`${consequenciascasa[2]}`);
+            }    
+        }else{
+            alert('se ainda nn está preparad, volte.');
+            return;
+        }
+    }  else{
+        alert('você decidu seguir o caminho.');
+    } 
+                alert("Você chegou ao topo e avistou o dragão!");
+        
+        const opcao3 = prompt(`O dragão está à sua frente. Você deseja enfrentá-lo?
+        1 - sim
+        2 - não`);
+        
+        if (opcao3 == 1) {
+            const rolarDados = confirm("Agora vamos tentar sua sorte! Preparado para rolar os dados?");
+            resultadoBatalha = rolarDado();
+            if (resultadoBatalha > 10) {
+                alert("Você venceu o dragão e salvou o reino!");
+            } else {
+                alert("O dragão foi muito forte! Você não conseguiu vencer.");
+            }
+        } else {
+            alert("Você decidiu não enfrentar o dragão e voltou.");
+        }
+        return;
+    }
+ }
 // Função para iniciar a jornada do cavaleiro
 function iniciarJornadaCavaleiro() {
-   const opcao1 = prompt(`Você está em frente a uma montanha sombria. O que você faz?
-       1 - Entro na montanha para explorar
-       2 - Sigo o caminho até o topo da montanha`);
-   if (opcao1 == "1") {
-       const rolarDados = confirm("Agora vamos tentar sua sorte! Preparado para rolar os dados?");
-       if (rolarDados === true) {
-           sorteioDado = rolarDado();
-           alert(`O número sorteado foi ${sorteioDado}!`);
-           if (sorteioDado >= 0 && sorteioDado <= 7) {
-               alert(`${consequenciasMontanha[0]}`);
-               batalhaMedia();
-           } else if (sorteioDado >= 8 && sorteioDado <= 14) {
-               alert(`${consequenciasMontanha[1]}`);
-               batalhaFacil();
-           } else {
-               alert(`${consequenciasMontanha[2]}`);
-           }
-       } else {
-           alert(`Se ainda não está preparado, volte mais tarde.`);
-           return;
-       }
-   } else {
-       alert(`Você decidiu seguir o caminho até o topo da montanha.`);
-      
-               alert("Você chegou ao topo e avistou o dragão!");
-       // Adicione lógica adicional para o que acontece ao encontrar o dragão
-       const enfrentarDragao = confirm("O dragão está à sua frente. Você deseja enfrentá-lo?");
-       const opcao2 = prompt(`O dragão está à sua frente. Você deseja enfrentá-lo?
-       1 - sim
-       2 - não`);
-       
-       if (enfrentarDragao) {
-           // Aqui você pode adicionar uma batalha com o dragão, se desejar
-           alert("Você se preparou para a batalha contra o dragão!");
-           const resultadoBatalha = rolarDado();
-           if (resultadoBatalha > 10) {
-               alert("Você venceu o dragão e salvou o reino!");
-           } else {
-               alert("O dragão foi muito forte! Você não conseguiu vencer.");
-           }
-       } else {
-           alert("Você decidiu não enfrentar o dragão e voltou.");
-       }
-       return;
-   }
-}
+    const opcao1 = prompt(`Você está em frente a uma montanha sombria, que tem uma caverna assustadora do lado. O que você faz?
+        1 - Entro na caverna para explorar
+        2 - Sigo o caminho até o topo da montanha`);
+    if (opcao1 == "1") {
+        const rolarDados = confirm("Agora vamos tentar sua sorte! Preparado para rolar os dados?");
+        if (rolarDados === true) {
+            sorteioDado = rolarDado();
+            alert(`O número sorteado foi ${sorteioDado}!`);
+            if (sorteioDado >= 0 && sorteioDado <= 7) {
+                alert(`${consequenciasMontanha[0]}`);
+                batalhaMedia();
+            } else if (sorteioDado >= 8 && sorteioDado <= 14) {
+                alert(`${consequenciasMontanha[1]}`);
+                batalhaFacil();
+            } else {
+                alert(`${consequenciasMontanha[2]}`);
+            }
+        } else {
+            alert(`Se ainda não está preparado, volte mais tarde.`);
+            return;
+        }
+    } else {
+        alert(`Você decidiu seguir o caminho até o topo da montanha.`);
+
+        const opcao2 = prompt(`ao subir mais um pouco, você se deparou com uma casa abandonada. O que você faz ?
+        1 - entro na casa
+        2 - continuo o caminho`);
+    if (opcao2 == 1){
+        const rolarDados = confirm("Agora vamos tentar sua sorte! Preparado para rolar os dados?"); 
+        if (rolarDados === true){
+            sorteioDado = rolarDado();
+            alert(`O número sorteado foi ${sorteioDado}!`);
+            if (sorteioDado >= 0 && sorteioDado <= 7) {
+                alert(`${consequenciascasa[0]}`);
+                batalhaFacil();
+            } else if (sorteioDado >= 8 && sorteioDado <= 14) {
+                alert(`você morreu`);
+
+            } else {
+                alert(`${consequenciascasa[2]}`);
+            }    
+        }else{
+            alert('se ainda nn está preparad, volte.');
+            return;
+        }
+    }  else{
+        alert('você decidu seguir o caminho.');
+    } 
+                alert("Você chegou ao topo e avistou o dragão!");
+        
+        const opcao3 = prompt(`O dragão está à sua frente. Você deseja enfrentá-lo?
+        1 - sim
+        2 - não`);
+        
+        if (opcao3 == 1) {
+            const rolarDados = confirm("Agora vamos tentar sua sorte! Preparado para rolar os dados?");
+            resultadoBatalha = rolarDado();
+            if (resultadoBatalha > 10) {
+                alert("Você venceu o dragão e salvou o reino!");
+            } else {
+                alert("O dragão foi muito forte! Você não conseguiu vencer.");
+            }
+        } else {
+            alert("Você decidiu não enfrentar o dragão e voltou.");
+        }
+        return;
+    }
+ }
